@@ -24,9 +24,9 @@
 {
     [super viewDidLoad];
 	
-    self.magTek = [[MTSCRA alloc] init];
-    [self.magTek listenForEvents:(TRANS_EVENT_OK|TRANS_EVENT_START|TRANS_EVENT_ERROR)];
-    [self.magTek setDeviceProtocolString:(@"com.magtek.idynamo")];
+    //self.magTek = [[MTSCRA alloc] init];
+    //[self.magTek listenForEvents:(TRANS_EVENT_OK|TRANS_EVENT_START|TRANS_EVENT_ERROR)];
+    //[self.magTek setDeviceProtocolString:(@"com.magtek.idynamo")];
     
     // Enable info level NSLogs inside SDK
     // Here we turn on before initializing SDK object so the act of initializing is logged
@@ -142,20 +142,20 @@
 
 - (void)magtek_activateWithDeviceType:(UInt32)deviceType
 {
-    [self.magTek setDeviceType:deviceType];
-    [self.magTek openDevice];
-    [self magtek_registerObservers:true];
+    //[self.magTek setDeviceType:deviceType];
+    //[self.magTek openDevice];
+    //[self magtek_registerObservers:true];
     [self displayDeviceStatus];
 }
 
 -(void)magTek_deactivate {
-    [self magtek_registerObservers:false];
+    //[self magtek_registerObservers:false];
     [self disconnected];
     
-    if (self.magTek != NULL && self.magTek.isDeviceOpened)
-    {
-        [self.magTek closeDevice];
-    }
+    //if (self.magTek != NULL && self.magTek.isDeviceOpened)
+    //{
+    //   [self.magTek closeDevice];
+    //}
     
 }
 
@@ -191,11 +191,11 @@
         case TRANS_STATUS_OK:
             NSLog(@"TRANS_STATUS_OK");
             self.encryptedSwipeData = [[EncryptedSwipeData alloc] init];
-            self.encryptedSwipeData.track1Masked = self.magTek.getTrack1Masked;
-            self.encryptedSwipeData.track2Masked = self.magTek.getTrack2Masked;
-            self.encryptedSwipeData.track1Encrypted = self.magTek.getTrack1;
-            self.encryptedSwipeData.track2Encrypted = self.magTek.getTrack2;
-            self.encryptedSwipeData.ksn = self.magTek.getKSN;
+            //self.encryptedSwipeData.track1Masked = self.magTek.getTrack1Masked;
+            //self.encryptedSwipeData.track2Masked = self.magTek.getTrack2Masked;
+            //self.encryptedSwipeData.track1Encrypted = self.magTek.getTrack1;
+            //self.encryptedSwipeData.track2Encrypted = self.magTek.getTrack2;
+            //self.encryptedSwipeData.ksn = self.magTek.getKSN;
             [self determineNextStep];
             break;
         case TRANS_STATUS_ERROR:
@@ -664,13 +664,14 @@
 
 - (void)displayDeviceStatus
 {
-    BOOL isMagTekDeviceConnected = [self.magTek isDeviceConnected];
-    BOOL isMagTekDeviceOpen = [self.magTek isDeviceOpened];
+    //BOOL isMagTekDeviceConnected = [self.magTek isDeviceConnected];
+    //BOOL isMagTekDeviceOpen = [self.magTek isDeviceOpened];
     BOOL isUniMagReaderAttached = [self.uniMag isReaderAttached];
     BOOL isUniMagReaderConnected = self.uniMag.getConnectionStatus;
     
-    if ((self.magTek && isMagTekDeviceConnected && isMagTekDeviceOpen)
-        || (self.uniMag && isUniMagReaderAttached && isUniMagReaderConnected)){
+    if (//(self.magTek && isMagTekDeviceConnected && isMagTekDeviceOpen)
+        //||
+        (self.uniMag && isUniMagReaderAttached && isUniMagReaderConnected)){
         [self connected];
     }
     else {
