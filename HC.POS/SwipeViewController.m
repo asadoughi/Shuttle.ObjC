@@ -333,125 +333,128 @@
 //called when SDK received a swipe successfully
 - (void)umSwipe_receivedSwipe:(NSNotification *)notification {
     
-    @try {
+   // @try {
     
 	NSData *data = [notification object];
-    int index = 0;
-    char *ptr = (char *)[data bytes]; // Set a pointer to the beginning of the bytes
+    NSLog(@"[[ %@ ]]",[data description]);
+    // char *ptr = (char *)[data bytes]; // Set a pointer to the beginning of the bytes
     
-    char stx = *ptr;
-    ptr++;
-    index++;
+    // str = "02680083 1f3a1d00 83802554 58415553 54494e5e 5341444f 55474849 24414d49 525e3437 3031204d 4f4e5445 52455920 4f414b53 20424c56 44204150 54203132 33205e3f 3b363336 30313533 33383639 3638353d 31363131 31393839 31313237 3f543133 34313030 363336ea 9203"
     
-    Byte lowByte = *ptr;
-    ptr++;
-    index++;
     
-    Byte highByte = *ptr;
-    ptr++;
-    index++;
-    
-    char cardEncodeType = *ptr;
-    ptr++;
-    index++;
-    
-    char trackStatus = *ptr;
-    ptr++;
-    index++;
-    
-    int track1MaskedLength = *ptr;
-    int track1EncryptedLength = [self encryptedLengthFromMasked: track1MaskedLength];
-    ptr++;
-    index++;
-    
-    int track2MaskedLength = *ptr;
-    int track2EncryptedLength = [self encryptedLengthFromMasked: track2MaskedLength];
-    ptr++;
-    index++;
-    
-    int track3MaskedLength = *ptr;
-    int track3EncryptedLength = [self encryptedLengthFromMasked: track3MaskedLength];
-    ptr++;
-    index++;
-    
-    char fieldByte1 = *ptr;
-    ptr++;
-    index++;
-    
-    char fieldByte2 = *ptr;
-    ptr++;
-    index++;
-    
-    NSData *track1MaskedData = [data subdataWithRange:NSMakeRange(index, track1MaskedLength)];
-    NSString *track1MaskedString = [[NSString alloc] initWithData:track1MaskedData encoding:NSASCIIStringEncoding];
-    ptr += track1MaskedLength;
-    index += track1MaskedLength;
-    
-    NSData *track2MaskedData = [data subdataWithRange:NSMakeRange(index, track2MaskedLength)];
-    NSString *track2MaskedString = [[NSString alloc] initWithData:track2MaskedData encoding:NSASCIIStringEncoding];
-    ptr += track2MaskedLength;
-    index += track2MaskedLength;
-    
-    NSData *track3MaskedData = [data subdataWithRange:NSMakeRange(index, track3MaskedLength)];
-    NSString *track3MaskedString = [[NSString alloc] initWithData:track3MaskedData encoding:NSASCIIStringEncoding];
-    ptr += track3MaskedLength;
-    index += track3MaskedLength;
-    
-    NSData *track1EncryptedData = [data subdataWithRange:NSMakeRange(index, track1EncryptedLength)];
-    NSString *track1EncryptedHex = [self hexFromData:track1EncryptedData];
-    ptr += track1EncryptedLength;
-    index += track1EncryptedLength;
-    
-    NSData *track2EncryptedData = [data subdataWithRange:NSMakeRange(index, track2EncryptedLength)];
-    NSString *track2EncryptedHex = [self hexFromData:track2EncryptedData];;
-    ptr += track2EncryptedLength;
-    index += track2EncryptedLength;
-    
-    NSData *track3EncryptedData = [data subdataWithRange:NSMakeRange(index, track3EncryptedLength)];
-    NSString *track3EncryptedHex = [self hexFromData:track3EncryptedData];
-    ptr += track3EncryptedLength;
-    index += track3EncryptedLength;
-    
-    NSData *serailNumberData = [data subdataWithRange:NSMakeRange(index, 10)];
-    NSString *serailNumberHex = [self hexFromData:serailNumberData];
-    ptr += 10;
-    index += 10;
-    
-    NSData *ksnData = [data subdataWithRange:NSMakeRange(index, 10)];
-    NSString *ksnHex = [self hexFromData:ksnData];
-    ptr += 10;
-    index += 10;
-    
-    char lrc = *ptr;
-    ptr++;
-    index++;
-    
-    char checksum = *ptr;
-    ptr++;
-    index++;
-    
-    char etx = *ptr;
-    ptr++;
-    index++;
-    
-    self.encryptedSwipeData = [[EncryptedSwipeData alloc] init];
-    self.encryptedSwipeData.track1Masked = track1MaskedString;
-    self.encryptedSwipeData.track2Masked = track2MaskedString;
-    self.encryptedSwipeData.track1Encrypted = track1EncryptedHex;
-    self.encryptedSwipeData.track2Encrypted = track2EncryptedHex;
-    self.encryptedSwipeData.ksn = ksnHex;
-    
-	NSString *text = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    
-    }
-    @catch (NSException *exception) {
-        NSLog(@"%@", exception.reason);
-        self.encryptedSwipeData = [[EncryptedSwipeData alloc] init];
-    }
-    @finally {
-        [self.uniMag requestSwipe];
-        [self determineNextStep];
-    }
+//    char stx = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    Byte lowByte = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    Byte highByte = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    char cardEncodeType = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    char trackStatus = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    int track1MaskedLength = *ptr;
+//    int track1EncryptedLength = [self encryptedLengthFromMasked: track1MaskedLength];
+//    ptr++;
+//    index++;
+//    
+//    int track2MaskedLength = *ptr;
+//    int track2EncryptedLength = [self encryptedLengthFromMasked: track2MaskedLength];
+//    ptr++;
+//    index++;
+//    
+//    int track3MaskedLength = *ptr;
+//    int track3EncryptedLength = [self encryptedLengthFromMasked: track3MaskedLength];
+//    ptr++;
+//    index++;
+//    
+//    char fieldByte1 = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    char fieldByte2 = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    NSData *track1MaskedData = [data subdataWithRange:NSMakeRange(index, track1MaskedLength)];
+//    NSString *track1MaskedString = [[NSString alloc] initWithData:track1MaskedData encoding:NSASCIIStringEncoding];
+//    ptr += track1MaskedLength;
+//    index += track1MaskedLength;
+//    
+//    NSData *track2MaskedData = [data subdataWithRange:NSMakeRange(index, track2MaskedLength)];
+//    NSString *track2MaskedString = [[NSString alloc] initWithData:track2MaskedData encoding:NSASCIIStringEncoding];
+//    ptr += track2MaskedLength;
+//    index += track2MaskedLength;
+//    
+//    NSData *track3MaskedData = [data subdataWithRange:NSMakeRange(index, track3MaskedLength)];
+//    NSString *track3MaskedString = [[NSString alloc] initWithData:track3MaskedData encoding:NSASCIIStringEncoding];
+//    ptr += track3MaskedLength;
+//    index += track3MaskedLength;
+//    
+//    NSData *track1EncryptedData = [data subdataWithRange:NSMakeRange(index, track1EncryptedLength)];
+//    NSString *track1EncryptedHex = [self hexFromData:track1EncryptedData];
+//    ptr += track1EncryptedLength;
+//    index += track1EncryptedLength;
+//    
+//    NSData *track2EncryptedData = [data subdataWithRange:NSMakeRange(index, track2EncryptedLength)];
+//    NSString *track2EncryptedHex = [self hexFromData:track2EncryptedData];;
+//    ptr += track2EncryptedLength;
+//    index += track2EncryptedLength;
+//    
+//    NSData *track3EncryptedData = [data subdataWithRange:NSMakeRange(index, track3EncryptedLength)];
+//    NSString *track3EncryptedHex = [self hexFromData:track3EncryptedData];
+//    ptr += track3EncryptedLength;
+//    index += track3EncryptedLength;
+//    
+//    NSData *serailNumberData = [data subdataWithRange:NSMakeRange(index, 10)];
+//    NSString *serailNumberHex = [self hexFromData:serailNumberData];
+//    ptr += 10;
+//    index += 10;
+//    
+//    NSData *ksnData = [data subdataWithRange:NSMakeRange(index, 10)];
+//    NSString *ksnHex = [self hexFromData:ksnData];
+//    ptr += 10;
+//    index += 10;
+//    
+//    char lrc = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    char checksum = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    char etx = *ptr;
+//    ptr++;
+//    index++;
+//    
+//    self.encryptedSwipeData = [[EncryptedSwipeData alloc] init];
+//    self.encryptedSwipeData.track1Masked = track1MaskedString;
+//    self.encryptedSwipeData.track2Masked = track2MaskedString;
+//    self.encryptedSwipeData.track1Encrypted = track1EncryptedHex;
+//    self.encryptedSwipeData.track2Encrypted = track2EncryptedHex;
+//    self.encryptedSwipeData.ksn = ksnHex;
+//    
+//	NSString *text = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+//    
+//    //}
+//    //@catch (NSException *exception) {
+//        //NSLog(@"%@", exception.reason);
+//       // self.encryptedSwipeData = [[EncryptedSwipeData alloc] init];
+//    //}
+//    //@finally {
+//        [self.uniMag requestSwipe];
+//        [self determineNextStep];
+//    //}
     
 }
 
@@ -548,14 +551,14 @@
     self.encryptedSwipeData.ksn = @"62994910450002000102";
     [self determineNextStep];
 
-//    UIAlertView *alert = [[UIAlertView alloc]
-//                          initWithTitle: @"magneticCardData"
-//                          message: @"magneticCardData"
-//                          delegate:nil
-//                          cancelButtonTitle:@"OK"
-//                          otherButtonTitles: nil];
-//    
-//    [alert show];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"magneticCardData"
+                          message: @"magneticCardData"
+                          delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil];
+    
+    [alert show];
     
 }
 
@@ -586,7 +589,7 @@
 }
 
 -(void)magneticCardRawData:(NSData *)tracks {
-    
+    NSLog(@"%@", tracks);
 }
 
 -(void)magneticCardEncryptedRawData:(int)encryption data:(NSData *)data {
@@ -709,7 +712,7 @@
 
 - (void)determineNextStep {
     
-    [self magTek_deactivate];
+    //[self magTek_deactivate];
     [self uniMag_deactivate];
     
     if (self.encryptedSwipeData != nil
