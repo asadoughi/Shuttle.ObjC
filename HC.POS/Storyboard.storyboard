@@ -262,29 +262,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pff-iL-eiH">
-                                <rect key="frame" x="21" y="66" width="286" height="117"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="UniMagIcon.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="simSwipeUniMagIIButtonPressed:" destination="Z8e-wJ-7s1" eventType="touchUpInside" id="Gja-JF-5oq"/>
-                                </connections>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="VRz-dM-sku">
-                                <rect key="frame" x="140" y="221" width="51" height="31"/>
+                                <rect key="frame" x="36" y="717" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.023529411760000001" green="0.65490196079999996" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="simSwipeUniMagIISwitchFlipped:" destination="Z8e-wJ-7s1" eventType="valueChanged" id="erO-Tj-xA5"/>
                                 </connections>
                             </switch>
+                            <view contentMode="scaleToFill" id="e9R-Bd-aAi">
+                                <rect key="frame" x="256" y="192" width="512" height="384"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mcbkg3.jpg" id="nhU-Uy-2sb">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe ID Now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kkN-8E-KpZ">
+                                <rect key="frame" x="419" y="476" width="186" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -295,7 +296,6 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="simSwipeUniMagIIButton" destination="pff-iL-eiH" id="e6r-PN-RrU"/>
                         <outlet property="simSwipeUniMagIISwitch" destination="VRz-dM-sku" id="wGE-0m-FDa"/>
                         <segue destination="LkI-uX-dra" kind="modal" identifier="segueToExistingUserView" id="Hpn-Cn-dWc"/>
                     </connections>
@@ -2190,7 +2190,6 @@ When targeting an iPad display with HostedCheckout, there are certain display co
     <resources>
         <image name="HCVerifyPay.png" width="1342" height="338"/>
         <image name="InitPayImage.png" width="1414" height="788"/>
-        <image name="UniMagIcon.png" width="244" height="155"/>
         <image name="button_step1.png" width="330" height="330"/>
         <image name="button_step2.png" width="330" height="330"/>
         <image name="button_step3.png" width="330" height="330"/>
@@ -2201,6 +2200,7 @@ When targeting an iPad display with HostedCheckout, there are certain display co
         <image name="infoBtn.png" width="44" height="44"/>
         <image name="infoBtnDismiss.png" width="44" height="44"/>
         <image name="logo.png" width="344" height="45"/>
+        <image name="mcbkg3.jpg" width="2400" height="1600"/>
         <image name="poweredByGray.png" width="719" height="99"/>
         <image name="poweredbyLogo.png" width="719" height="99"/>
         <image name="receipt.png" width="303" height="720"/>

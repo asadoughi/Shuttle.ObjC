@@ -67,6 +67,32 @@
     self.simSwipeUniMagIISwitch.on = true;
     [self uniMag_activate];
     
+    NSLog(@"$ a");
+    [self setCustomBackgroundWallpaper];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setCustomBackgroundWallpaper];
+}
+-(void)setCustomBackgroundWallpaper
+{
+    UIImage *bkg_a = [UIImage imageNamed:@"mcbkg3.jpg"];
+    UIImageView *aBkg = [[UIImageView alloc] initWithImage:bkg_a];
+    CGRect screen = [UIScreen mainScreen].bounds;
+    [aBkg setFrame:CGRectMake(0, 0, screen.size.width, screen.size.height)];
+    [self.view addSubview:aBkg];
+    [self.view bringSubviewToFront:aBkg];
+    
+    UILabel *my_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 300, 40)];
+    my_label.center = CGPointMake((screen.size.width/2)+50, (screen.size.height/2)+150);
+    my_label.text= @"Swipe ID Now";
+    my_label.font = [UIFont boldSystemFontOfSize:30];
+    my_label.backgroundColor = [UIColor clearColor];
+    my_label.textColor = [UIColor whiteColor];
+    [self.view addSubview:my_label];
+    [self.view bringSubviewToFront:my_label];
 }
 
 - (void)didReceiveMemoryWarning

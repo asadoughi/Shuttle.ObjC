@@ -31,10 +31,49 @@
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismiss) name:@"BACKTOINDEXNOTE" object:nil];
     
-    self.view.backgroundColor = [UIColor orangeColor];
-    [self insertProvisionButton];
-    [self insertValidationButton];
+    [self setCustomBackgroundWallpaper];
     
+    // set the WitDelegate object
+    [Wit sharedInstance].delegate = self;
+    // create the button
+    CGRect screen = [UIScreen mainScreen].bounds;
+    CGFloat w = 100;
+    CGRect rect = CGRectMake(screen.size.width/2 - w/2, 60, w, 100);
+    
+    WITMicButton* witButton = [[WITMicButton alloc] initWithFrame:rect];
+    [self.view addSubview:witButton];
+
+    self.view.backgroundColor = [UIColor orangeColor];
+    //[self setCustomBackgroundWallpaper];
+    [self insertProvisionButton];
+    //[self insertValidationButton];
+}
+
+-(void)setCustomBackgroundWallpaper
+{
+    UIImage *bkg_a = [UIImage imageNamed:@"mcbkg1.jpg"];
+    UIImageView *aBkg = [[UIImageView alloc] initWithImage:bkg_a];
+    CGRect screen = [UIScreen mainScreen].bounds;
+    [aBkg setFrame:CGRectMake(0, 0, screen.size.width, screen.size.height)];
+    [self.view addSubview:aBkg];
+}
+
+- (void)witDidGraspIntent:(NSArray *)outcomes messageId:(NSString *)messageId customData:(id) customData error:(NSError*)e {
+    if (e) {
+        NSLog(@"[Wit] error: %@", [e localizedDescription]);
+        return;
+    }
+    NSDictionary *firstOutcome = [outcomes objectAtIndex:0];
+    NSString *intent = [firstOutcome objectForKey:@"intent"];
+    NSLog(@"\n\n\n wit intent is: %@", intent);
+    
+    //labelView.text = [NSString stringWithFormat:@"intent = %@", intent];
+    
+    if ([intent isEqualToString:@"new_user"]) {
+        NSLog(@"woooohoooo");
+        [self userPressedProvisionButton];
+    }
+    //[self.view addSubview:labelView];
 }
 
 -(void)dismiss
@@ -44,10 +83,13 @@
 
 -(void)insertProvisionButton
 {
+    CGRect screen = [UIScreen mainScreen].bounds;
+    
     UIButton *provisionBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [provisionBtn setTitle:@"Provision Nymi" forState:UIControlStateNormal];
     [provisionBtn addTarget:self action:@selector(userPressedProvisionButton) forControlEvents:UIControlEventTouchUpInside];
-    provisionBtn.frame = CGRectMake(90, 190, 160, 60);
+    provisionBtn.frame = CGRectMake(0, 0, 160, 60);
+    provisionBtn.center = CGPointMake(screen.size.width/2, screen.size.width/5);
     [self.view addSubview:provisionBtn];
 }
 
