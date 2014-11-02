@@ -32,6 +32,9 @@
 		458BA80017F51C1000F4313C /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 458BA7FF17F51C1000F4313C /* libiconv.dylib */; };
 		B8FE0EC31A06041C00CF38DF /* NymiDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0EC21A06041C00CF38DF /* NymiDetectionViewController.m */; };
 		B8FE0EDA1A060A6400CF38DF /* DriversLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */; };
+		B8FE0EE11A061F5700CF38DF /* NclWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0EE01A061F5700CF38DF /* NclWrapper.m */; };
+		B8FE0EE51A061F7700CF38DF /* libNCLNetiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FE0EE41A061F7700CF38DF /* libNCLNetiOS.a */; };
+		B8FE0EE81A06277B00CF38DF /* NymiUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0EE71A06277B00CF38DF /* NymiUserInfo.m */; };
 		C203BF3217FA22AA0006EA70 /* uDynamoButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = C203BED817FA22AA0006EA70 /* uDynamoButtonDown.png */; };
 		C21BE5B117ECD4A700BA4E74 /* responsecode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B017ECD4A700BA4E74 /* responsecode_1.png */; };
 		C21BE5B317ECDA9000BA4E74 /* responsecode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B217ECDA9000BA4E74 /* responsecode_2.png */; };
@@ -124,6 +127,12 @@
 		B8FE0EC21A06041C00CF38DF /* NymiDetectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NymiDetectionViewController.m; sourceTree = "<group>"; };
 		B8FE0ED71A0609AE00CF38DF /* DriversLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriversLicense.h; sourceTree = "<group>"; };
 		B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriversLicense.m; sourceTree = "<group>"; };
+		B8FE0EDE1A061F4000CF38DF /* ncl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ncl.h; sourceTree = "<group>"; };
+		B8FE0EDF1A061F4D00CF38DF /* NclWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NclWrapper.h; sourceTree = "<group>"; };
+		B8FE0EE01A061F5700CF38DF /* NclWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NclWrapper.m; sourceTree = "<group>"; };
+		B8FE0EE41A061F7700CF38DF /* libNCLNetiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNCLNetiOS.a; sourceTree = "<group>"; };
+		B8FE0EE61A06277B00CF38DF /* NymiUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NymiUserInfo.h; sourceTree = "<group>"; };
+		B8FE0EE71A06277B00CF38DF /* NymiUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NymiUserInfo.m; sourceTree = "<group>"; };
 		C203BE8617FA22AA0006EA70 /* 144x144-appButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "144x144-appButton.png"; sourceTree = "<group>"; };
 		C203BE8A17FA22AA0006EA70 /* button_step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step1.png; sourceTree = "<group>"; };
 		C203BE8B17FA22AA0006EA70 /* button_step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step2.png; sourceTree = "<group>"; };
@@ -270,6 +279,7 @@
 				C241955617D7860000453F74 /* UIKit.framework in Frameworks */,
 				458BA80017F51C1000F4313C /* libiconv.dylib in Frameworks */,
 				4575F29E17F22E3C009C9638 /* libstdc++.dylib in Frameworks */,
+				B8FE0EE51A061F7700CF38DF /* libNCLNetiOS.a in Frameworks */,
 				4575F2A817F2412F009C9638 /* IDTECH_UniMag.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +325,19 @@
 				B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		B8FE0EDB1A061EF800CF38DF /* nymi */ = {
+			isa = PBXGroup;
+			children = (
+				B8FE0EDE1A061F4000CF38DF /* ncl.h */,
+				B8FE0EE41A061F7700CF38DF /* libNCLNetiOS.a */,
+				B8FE0EDF1A061F4D00CF38DF /* NclWrapper.h */,
+				B8FE0EE01A061F5700CF38DF /* NclWrapper.m */,
+				B8FE0EE61A06277B00CF38DF /* NymiUserInfo.h */,
+				B8FE0EE71A06277B00CF38DF /* NymiUserInfo.m */,
+			);
+			name = nymi;
 			sourceTree = "<group>";
 		};
 		C21BE5CC17F0DDAC00BA4E74 /* images */ = {
@@ -499,6 +522,7 @@
 		C241955C17D7860000453F74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B8FE0EDB1A061EF800CF38DF /* nymi */,
 				B8FE0ED61A06099900CF38DF /* Models */,
 				B8FE0EC01A06038900CF38DF /* Controllers */,
 				C21BE5CC17F0DDAC00BA4E74 /* images */,
@@ -639,7 +663,9 @@
 				C266F79E17DF939800913AC8 /* step3TutorialViewController.m in Sources */,
 				C28C4AAF17EA39C0007F8375 /* ReceiptViewController.m in Sources */,
 				C28C4AB817EA5894007F8375 /* DecisionViewController.m in Sources */,
+				B8FE0EE11A061F5700CF38DF /* NclWrapper.m in Sources */,
 				B8FE0EC31A06041C00CF38DF /* NymiDetectionViewController.m in Sources */,
+				B8FE0EE81A06277B00CF38DF /* NymiUserInfo.m in Sources */,
 				C28C4ACD17EA6682007F8375 /* SwipeViewController.m in Sources */,
 				C28C4AD217EB3D6B007F8375 /* SwipeInitResultsViewController.m in Sources */,
 				4575F2AB17F288F2009C9638 /* EncryptedSwipeData.m in Sources */,

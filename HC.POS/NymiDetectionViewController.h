@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "NclWrapper.h"
+#import "NymiUserInfo.h"
 
-@interface NymiDetectionViewController : UIViewController
+@interface NymiDetectionViewController : UIViewController <NclEventProtocol>
 
+// conform to ncl event protocol implementation
+-(void) incomingNclEvent: (NclEvent* ) nclEvent;
 @end
