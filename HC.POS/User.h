@@ -18,4 +18,7 @@
 
 @property(nonatomic, strong) DriversLicense *driversLicense;
 @property(nonatomic, strong) NymiUserInfo *nui;
+
+-(id)initWithLicense:(DriversLicense *)dl andNymiInfo:(NymiUserInfo *)info;
+-(void)updateToUsersList;
 @end

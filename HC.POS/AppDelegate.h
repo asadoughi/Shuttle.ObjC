@@ -13,8 +13,10 @@
 {
     User *user;
     NSMutableDictionary *users;
+    NSString *nymiId;
 }
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) NSString *nymiId;
 @property (nonatomic, strong) NSMutableDictionary *users;
 
 @property (strong, nonatomic) UIWindow *window;
@@ -43,5 +45,6 @@
 
 -(void) reset;
 -(void)addUser:(User *)newUser;
+-(BOOL)doesNotHaveNymiId:(NSString *)nymiId;
 
 @end

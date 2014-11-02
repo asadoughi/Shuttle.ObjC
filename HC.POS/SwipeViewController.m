@@ -8,8 +8,14 @@
 
 #import "SwipeViewController.h"
 #import "AppDelegate.h"
+#import "NymiUserInfo.h"
+#import "User.h"
 
 @implementation SwipeViewController
+{
+    DriversLicense *new_license;
+    NymiUserInfo *nymiInfo;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -20,9 +26,10 @@
     return self;
 }
 
--(void)setNymiInfo:(NymiUserInfo *)nymiInfo
+-(void)setNymiInfo:(NymiUserInfo *)nympho
 {
     NSLog(@"GTFO");
+    nymiInfo = nympho;
 }
 
 - (void)viewDidLoad
@@ -349,13 +356,13 @@
     
 	NSData *data = [notification object];
     NSLog(@"Data received from swipe: %@", [data description]);
-    DriversLicense *_new_license = [[DriversLicense alloc] initWithData:data];
+    new_license = [[DriversLicense alloc] initWithData:data];
     
-    if (_new_license.isInvalid) {
+    if ([new_license isInvalid]) {
         [self displaySwipeAgainMessage];
     }
     
-    NSLog(@"\n\n\n=========\n\nDriver's License data is: %@\n\n==========", [_new_license description]);
+    // NSLog(@"\n\n\n=========\n\nDriver's License data is: %@\n\n==========", [_new_license description]);
 //    NSLog(@"[[ %@ ]]",[data description]);
     // char *ptr = (char *)[data bytes]; // Set a pointer to the beginning of the bytes
     
@@ -735,13 +742,19 @@
     //[self magTek_deactivate];
     [self uniMag_deactivate];
     
-    if (self.encryptedSwipeData != nil
+    if (new_license) {
+        NSLog(@"OMG WE MADE IT THIS FAR!");
+        User *newUser = [[User alloc] initWithLicense:new_license andNymiInfo:nymiInfo];
+        [newUser updateToUsersList];
+        // [self performSegueWithIdentifier:@"" sender:self];
+    } else if (self.encryptedSwipeData != nil
         && self.encryptedSwipeData.track2Masked != nil
-        && [self.encryptedSwipeData.track2Masked rangeOfString:@"="].location != NSNotFound)
+        && [self.encryptedSwipeData.track2Masked rangeOfString:@"segueSwipeResults="].location != NSNotFound)
     {
         AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         appDelegate.encryptedSwipeData = self.encryptedSwipeData;
-        [self performSegueWithIdentifier:@"segueSwipeResults" sender:self];
+        
+        [self performSegueWithIdentifier:@"" sender:self];
     }
     else if (self.simSwipeiDynamoSwitch.on) {
         [self magtek_activateWithDeviceType: MAGTEKIDYNAMO];

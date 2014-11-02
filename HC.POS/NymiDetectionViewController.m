@@ -9,7 +9,8 @@
 #import "NymiDetectionViewController.h"
 #include "ncl.h"
 #include "SwipeViewController.h"
-
+#include "AppDelegate.h"
+#include "ExistingUserViewController.h"
 
 @interface NymiDetectionViewController ()
 {
@@ -23,6 +24,7 @@
 @end
 
 @implementation NymiDetectionViewController
+@synthesize nui = _nui;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +67,7 @@
     UIButton *validationBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [validationBtn setTitle:@"Validate Nymi" forState:UIControlStateNormal];
     [validationBtn addTarget:self action:@selector(userPressedValidationButton) forControlEvents:UIControlEventTouchUpInside];
-    validationBtn.frame = CGRectMake(90, 250, 160, 60);
+    validationBtn.frame = CGRectMake(90, 300, 160, 60);
     [self.view addSubview:validationBtn];
 }
 
@@ -164,8 +166,15 @@
                                        NSLog(@"EVENT_VALIDATION: currentEvent.validation.nymiHandle: %d", currentEvent.validation.nymiHandle);
                                    });
                     NSLog(@"FINALLY MADE IT HERE> IS THIS THE LASTY STOP?");
+                    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
                     
-                    [self performSegueWithIdentifier:@"segueToCardSwiper" sender:self];
+                    if ([delegate doesNotHaveNymiId:nui.nymiId]) {
+                        [delegate setNymiId:nui.nymiId];
+                        [self performSegueWithIdentifier:@"segueToCardSwiper" sender:self];
+                    } else {
+                        [self performSegueWithIdentifier:@"segueToExistingUserView" sender:self];
+                    }
+                    
                 }
                 
             default:
@@ -178,6 +187,10 @@
     if ([[segue identifier] isEqualToString:@"segueToCardSwiper"]) {
         SwipeViewController *swipeVC = (SwipeViewController *)[segue destinationViewController];
         [swipeVC setNymiInfo:nui];
+    } else if ([[segue identifier] isEqualToString:@"segueToExistingUserView"]) {
+        // something here
+        ExistingUserViewController *existingUserVC = (ExistingUserViewController *)[segue destinationViewController];
+        //[existingUserVC setNymiInfo:nui];
     }
 }
 

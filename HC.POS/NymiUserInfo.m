@@ -9,15 +9,17 @@
 #import "NymiUserInfo.h"
 
 @implementation NymiUserInfo
+@synthesize nymiKey = _nymiKey;
+@synthesize nymiId = _nymiId;
 
 -(id)initWithKey:(NSString *)provisionKey andId:(NSString *)provisionId andHandle:(int)handle
 {
     self = [super init];
     
     if (self) {
-        nymiKey = provisionKey;
-        nymiId = provisionId;
-        nymiHandle = handle;
+        _nymiKey = [provisionKey copy];
+        _nymiId = [provisionId copy];
+        _nymiHandle = handle;
     }
     
     return self;
@@ -25,7 +27,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"key is %@, id is %@, handle is %d", nymiKey, nymiId, nymiHandle];
+    return [NSString stringWithFormat:@"key is %@, id is %@, handle is %d", _nymiKey, _nymiId, _nymiHandle];
 }
 
 @end

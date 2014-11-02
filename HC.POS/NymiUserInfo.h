@@ -12,11 +12,11 @@
 {
     NSString* nymiKey;
     NSString* nymiId;
-    int nymiHandle;
+    int _nymiHandle;
 }
 
-@property(nonatomic, strong) NSString* nymiKey;
-@property(nonatomic, strong) NSString* nymiId;
+@property(nonatomic, copy) NSString* nymiKey;
+@property(nonatomic, copy) NSString* nymiId;
 
 -(id)initWithKey:(NSString *)provisionKey andId:(NSString *)provisionId andHandle:(int)handle;
 @end

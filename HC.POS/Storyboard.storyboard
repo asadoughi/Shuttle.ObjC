@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wuL-Gc-xii">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -155,11 +156,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <segue destination="Z8e-wJ-7s1" kind="modal" identifier="segueToCardSwiper" id="t1l-cj-Ti6"/>
+                        <segue destination="LkI-uX-dra" kind="modal" identifier="segueToExistingUserView" id="oMz-kL-8kq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CgY-YJ-oTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3696" y="-5231"/>
+            <point key="canvasLocation" x="-4080" y="-5455"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="16u-OG-LQh">
@@ -250,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dg-vn-zZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2355" y="-5672"/>
+            <point key="canvasLocation" x="-1511" y="-5428"/>
         </scene>
         <!--Swipe View Controller-->
         <scene sceneID="I8P-UM-aj3">
@@ -306,6 +308,21 @@
                 <swipeGestureRecognizer direction="up" id="yAh-Nf-Ee1"/>
             </objects>
             <point key="canvasLocation" x="-3423" y="-4082"/>
+        </scene>
+        <!--Existing User View Controller-->
+        <scene sceneID="5aB-YP-aWZ">
+            <objects>
+                <viewController id="LkI-uX-dra" customClass="ExistingUserViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fIM-xX-gmp">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFc-SE-Oz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2782" y="-5455"/>
         </scene>
         <!--Swipe Init Results View Controller-->
         <scene sceneID="hcX-rm-eEQ">

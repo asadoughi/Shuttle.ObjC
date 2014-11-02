@@ -15,13 +15,31 @@
     return YES;
 }
 
+-(void)setNymiId:(NSString *)newNymiId
+{
+    nymiId = newNymiId;
+}
+
 -(void)addUser:(User *)newUser
 {
     if (!users) {
         users = [[NSMutableDictionary alloc] init];
     }
-    
-    users[newUser.nui.nymiId] = newUser;
+    if (nymiId) {
+        users[nymiId] = newUser;
+        NSLog(@">> Added user with Nymi ID");
+    } else {
+        NSLog(@"Nope...!");
+    }
+}
+
+-(BOOL)doesNotHaveNymiId:(NSString *)nymiId
+{
+    if (!users) {
+        return YES;
+    } else {
+        return [users objectForKey:nymiId] == nil;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

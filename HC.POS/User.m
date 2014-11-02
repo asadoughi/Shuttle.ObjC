@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 
 @implementation User
+@synthesize driversLicense = _driversLicense;
+@synthesize nui = _nui;
 
 -(id)initWithLicense:(DriversLicense *)dl andNymiInfo:(NymiUserInfo *)info
 {
@@ -18,7 +20,8 @@
     if (self) {
         driversLicense = dl;
         nui = info;
-        [self updateToUsersList];
+//        _driversLicense = dl;
+//        _nui = info;
     }
     
     return self;
