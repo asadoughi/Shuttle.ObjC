@@ -22,8 +22,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor orangeColor];
+    [self insertProvisionButton];
+    [self insertValidationButton];
     
+}
+
+-(void)insertProvisionButton
+{
+    UIButton *provisionBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [provisionBtn setTitle:@"Provision Nymi" forState:UIControlStateNormal];
+    [provisionBtn addTarget:self action:@selector(userPressedProvisionButton) forControlEvents:UIControlEventTouchUpInside];
+    provisionBtn.frame = CGRectMake(90, 190, 160, 60);
+    [self.view addSubview:provisionBtn];
+}
+
+-(void)userPressedProvisionButton
+{
     if (!_nymiProvsioned) {
         _myNcl = [[NclWrapper alloc] init];
         
@@ -38,6 +53,24 @@
         [_myNcl waitNclForEvent];
     }
 }
+
+-(void)insertValidationButton
+{
+    UIButton *validationBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [validationBtn setTitle:@"Validate Nymi" forState:UIControlStateNormal];
+    [validationBtn addTarget:self action:@selector(userPressedValidationButton) forControlEvents:UIControlEventTouchUpInside];
+    validationBtn.frame = CGRectMake(90, 250, 160, 60);
+    [self.view addSubview:validationBtn];
+}
+
+-(void)userPressedValidationButton
+{
+    NSLog(@"WTF?");
+    [_myNcl findNymi];
+    [_myNcl setEventTypeToWaitFor:NCL_EVENT_FIND];
+    [_myNcl waitNclForEvent];
+}
+
 
 
 // Method called when NCL events are received
@@ -92,9 +125,6 @@
                     NymiUserInfo *nui = [[NymiUserInfo alloc] initWithKey:provisionIdToStrings(currentEvent.provision.provision.key) andId:provisionIdToStrings(currentEvent.provision.provision.id) andHandle:currentEvent.provision.nymiHandle];
                     NSLog(@"HI AMIR: We have: %@", [nui description]);
                     
-                    [_myNcl findNymi];
-                    [_myNcl setEventTypeToWaitFor:NCL_EVENT_FIND];
-                    [_myNcl waitNclForEvent];
                 }
                 
                 break;
@@ -118,14 +148,15 @@
                 NSLog(@"hi; NCL_EVENT_VALIDATION");
                 // [self updateUiText:(@"Nymi validated, NEA can perform actions for validated user\n")];
                 [_myNcl disconnectNymi:(currentEvent.validation.nymiHandle)];
-                if (_nymiProvsioned)
+                if (_nymiProvsioned) {
                     dispatch_async(dispatch_get_main_queue(),
                                    ^{
                                        //[self.nymiButton setHidden:(NO)];
                                        
                                        NSLog(@"EVENT_VALIDATION: currentEvent.validation.nymiHandle: %d", currentEvent.validation.nymiHandle);
                                    });
-                
+                    NSLog(@"FINALLY MADE IT HERE> IS THIS THE LASTY STOP?");
+                }
                 
             default:
                 break;

@@ -35,6 +35,7 @@
 		B8FE0EE11A061F5700CF38DF /* NclWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0EE01A061F5700CF38DF /* NclWrapper.m */; };
 		B8FE0EE51A061F7700CF38DF /* libNCLNetiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FE0EE41A061F7700CF38DF /* libNCLNetiOS.a */; };
 		B8FE0EE81A06277B00CF38DF /* NymiUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0EE71A06277B00CF38DF /* NymiUserInfo.m */; };
+		B8FE0EEB1A06366A00CF38DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0EEA1A06366A00CF38DF /* User.m */; };
 		C203BF3217FA22AA0006EA70 /* uDynamoButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = C203BED817FA22AA0006EA70 /* uDynamoButtonDown.png */; };
 		C21BE5B117ECD4A700BA4E74 /* responsecode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B017ECD4A700BA4E74 /* responsecode_1.png */; };
 		C21BE5B317ECDA9000BA4E74 /* responsecode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B217ECDA9000BA4E74 /* responsecode_2.png */; };
@@ -133,6 +134,8 @@
 		B8FE0EE41A061F7700CF38DF /* libNCLNetiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNCLNetiOS.a; sourceTree = "<group>"; };
 		B8FE0EE61A06277B00CF38DF /* NymiUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NymiUserInfo.h; sourceTree = "<group>"; };
 		B8FE0EE71A06277B00CF38DF /* NymiUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NymiUserInfo.m; sourceTree = "<group>"; };
+		B8FE0EE91A06366A00CF38DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B8FE0EEA1A06366A00CF38DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C203BE8617FA22AA0006EA70 /* 144x144-appButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "144x144-appButton.png"; sourceTree = "<group>"; };
 		C203BE8A17FA22AA0006EA70 /* button_step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step1.png; sourceTree = "<group>"; };
 		C203BE8B17FA22AA0006EA70 /* button_step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step2.png; sourceTree = "<group>"; };
@@ -321,8 +324,11 @@
 		B8FE0ED61A06099900CF38DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B8FE0EDB1A061EF800CF38DF /* nymi */,
 				B8FE0ED71A0609AE00CF38DF /* DriversLicense.h */,
 				B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */,
+				B8FE0EE91A06366A00CF38DF /* User.h */,
+				B8FE0EEA1A06366A00CF38DF /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -522,7 +528,6 @@
 		C241955C17D7860000453F74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B8FE0EDB1A061EF800CF38DF /* nymi */,
 				B8FE0ED61A06099900CF38DF /* Models */,
 				B8FE0EC01A06038900CF38DF /* Controllers */,
 				C21BE5CC17F0DDAC00BA4E74 /* images */,
@@ -648,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8FE0EEB1A06366A00CF38DF /* User.m in Sources */,
 				B8FE0EDA1A060A6400CF38DF /* DriversLicense.m in Sources */,
 				C241956217D7860000453F74 /* main.m in Sources */,
 				C241956617D7860000453F74 /* AppDelegate.m in Sources */,

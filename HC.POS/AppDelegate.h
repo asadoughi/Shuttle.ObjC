@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "EncryptedSwipeData.h"
-
+#import "User.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    User *user;
+    NSMutableDictionary *users;
+}
+@property (nonatomic, strong) User *user;
+@property (nonatomic, strong) NSMutableDictionary *users;
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *pid;
@@ -36,5 +42,6 @@
 @property (strong, nonatomic) EncryptedSwipeData *encryptedSwipeData;
 
 -(void) reset;
+-(void)addUser:(User *)newUser;
 
 @end

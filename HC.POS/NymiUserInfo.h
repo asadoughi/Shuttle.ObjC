@@ -15,5 +15,8 @@
     int nymiHandle;
 }
 
+@property(nonatomic, strong) NSString* nymiKey;
+@property(nonatomic, strong) NSString* nymiId;
+
 -(id)initWithKey:(NSString *)provisionKey andId:(NSString *)provisionId andHandle:(int)handle;
 @end
