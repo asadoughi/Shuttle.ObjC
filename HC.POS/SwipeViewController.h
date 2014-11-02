@@ -12,8 +12,9 @@
 #import "MTSCRA.h"
 #import "uniMag.h"
 #import "DriversLicense.h"
+#import "NymiUserInfo.h"
 
-@interface SwipeViewController : UIViewController 
+@interface SwipeViewController : UIViewController <UIAlertViewDelegate>
 
 //@property (nonatomic, strong) DriversLicense *new_license;
 @property (nonatomic, weak) IBOutlet UIImageView *ccSwipe;
@@ -43,4 +44,5 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageCardState;
 
+-(void)setNymiInfo:(NymiUserInfo *)nymiInfo;
 @end

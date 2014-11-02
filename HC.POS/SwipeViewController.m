@@ -20,6 +20,11 @@
     return self;
 }
 
+-(void)setNymiInfo:(NymiUserInfo *)nymiInfo
+{
+    NSLog(@"GTFO");
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -331,6 +336,12 @@
     [self.uniMag requestSwipe];
 }
 
+-(void)displaySwipeAgainMessage
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please Try Again" message:@"Swipe the card" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
 //called when SDK received a swipe successfully
 - (void)umSwipe_receivedSwipe:(NSNotification *)notification {
     
@@ -339,6 +350,10 @@
 	NSData *data = [notification object];
     NSLog(@"Data received from swipe: %@", [data description]);
     DriversLicense *_new_license = [[DriversLicense alloc] initWithData:data];
+    
+    if (_new_license.isInvalid) {
+        [self displaySwipeAgainMessage];
+    }
     
     NSLog(@"\n\n\n=========\n\nDriver's License data is: %@\n\n==========", [_new_license description]);
 //    NSLog(@"[[ %@ ]]",[data description]);

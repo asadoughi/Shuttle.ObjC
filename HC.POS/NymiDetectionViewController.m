@@ -8,9 +8,15 @@
 
 #import "NymiDetectionViewController.h"
 #include "ncl.h"
+#include "SwipeViewController.h"
+
 
 @interface NymiDetectionViewController ()
+{
+    NymiUserInfo *nui;
+}
 
+@property(nonatomic, strong) NymiUserInfo *nui;
 @property BOOL nymiProvsioned, nclInitEventFailure;
 @property(nonatomic, strong) NclWrapper* myNcl;
 
@@ -65,10 +71,12 @@
 
 -(void)userPressedValidationButton
 {
-    NSLog(@"WTF?");
-    [_myNcl findNymi];
-    [_myNcl setEventTypeToWaitFor:NCL_EVENT_FIND];
-    [_myNcl waitNclForEvent];
+    if (_nymiProvsioned) {
+        NSLog(@"WTF?");
+        [_myNcl findNymi];
+        [_myNcl setEventTypeToWaitFor:NCL_EVENT_FIND];
+        [_myNcl waitNclForEvent];
+    }
 }
 
 
@@ -122,7 +130,7 @@
                    NSLog(@"*** currentEvent.provision.provision.id: %u", (uint8_t)currentEvent.provision.provision.id);
                    NSLog(@"*** currentEvent.provision.provision.key: %u", (uint8_t)currentEvent.provision.provision.key);
                     
-                    NymiUserInfo *nui = [[NymiUserInfo alloc] initWithKey:provisionIdToStrings(currentEvent.provision.provision.key) andId:provisionIdToStrings(currentEvent.provision.provision.id) andHandle:currentEvent.provision.nymiHandle];
+                    nui = [[NymiUserInfo alloc] initWithKey:provisionIdToStrings(currentEvent.provision.provision.key) andId:provisionIdToStrings(currentEvent.provision.provision.id) andHandle:currentEvent.provision.nymiHandle];
                     NSLog(@"HI AMIR: We have: %@", [nui description]);
                     
                 }
@@ -156,11 +164,20 @@
                                        NSLog(@"EVENT_VALIDATION: currentEvent.validation.nymiHandle: %d", currentEvent.validation.nymiHandle);
                                    });
                     NSLog(@"FINALLY MADE IT HERE> IS THIS THE LASTY STOP?");
+                    
+                    [self performSegueWithIdentifier:@"segueToCardSwiper" sender:self];
                 }
                 
             default:
                 break;
         }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"segueToCardSwiper"]) {
+        SwipeViewController *swipeVC = (SwipeViewController *)[segue destinationViewController];
+        [swipeVC setNymiInfo:nui];
     }
 }
 

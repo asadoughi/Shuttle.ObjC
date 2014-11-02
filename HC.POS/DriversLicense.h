@@ -11,4 +11,5 @@
 @interface DriversLicense : NSObject
 
 - (id) initWithData:(NSData *)data;
+-(BOOL)isInvalid;
 @end
