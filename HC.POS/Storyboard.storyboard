@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="3Hd-LA-are">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Z8e-wJ-7s1">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Decision View Controller-->
@@ -144,6 +144,21 @@
             </objects>
             <point key="canvasLocation" x="-4274" y="-1034"/>
         </scene>
+        <!--Nymi Detection View Controller-->
+        <scene sceneID="Jjb-xf-zBO">
+            <objects>
+                <viewController id="wuL-Gc-xii" customClass="NymiDetectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hII-fm-Kwu">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgY-YJ-oTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3696" y="-5231"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="16u-OG-LQh">
             <objects>
@@ -233,63 +248,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dg-vn-zZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3423" y="-5328"/>
+            <point key="canvasLocation" x="-2355" y="-5672"/>
         </scene>
         <!--Swipe View Controller-->
         <scene sceneID="I8P-UM-aj3">
             <objects>
                 <viewController id="Z8e-wJ-7s1" customClass="SwipeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AAv-WS-lCA">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7HA-3B-zlM">
-                                <rect key="frame" x="162" y="644" width="190" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="uDynamoIcon.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="uDynamoIconDown.png"/>
-                                <state key="highlighted" image="uDynamoIconDown.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="simSwipeuDynamoButtonPressed:" destination="Z8e-wJ-7s1" eventType="touchUpInside" id="qWr-kd-156"/>
-                                </connections>
-                            </button>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ZEb-SG-u69">
-                                <rect key="frame" x="233" y="807" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="simSwipeduDynamoSwitchFlipped:" destination="Z8e-wJ-7s1" eventType="valueChanged" id="w54-xz-ri6"/>
-                                </connections>
-                            </switch>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="28Q-RN-YQP">
-                                <rect key="frame" x="482" y="807" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="simSwipeiDynamoSwitchFlipped:" destination="Z8e-wJ-7s1" eventType="valueChanged" id="C9j-qw-oDj"/>
-                                </connections>
-                            </switch>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f5I-jX-UxP">
-                                <rect key="frame" x="411" y="644" width="190" height="122"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="iDynamoIcon.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" image="idynamo5ButtonDown.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="simSwipeiDynamoButtonPressed:" destination="Z8e-wJ-7s1" eventType="touchUpInside" id="iUc-ne-xqH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pff-iL-eiH">
-                                <rect key="frame" x="241" y="397" width="286" height="117"/>
+                                <rect key="frame" x="21" y="66" width="286" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="UniMagIcon.png">
@@ -303,77 +273,26 @@
                                     <action selector="simSwipeUniMagIIButtonPressed:" destination="Z8e-wJ-7s1" eventType="touchUpInside" id="Gja-JF-5oq"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ccStaticState.png" id="sEl-9b-Di8">
-                                <rect key="frame" x="127" y="142" width="515" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="VRz-dM-sku">
-                                <rect key="frame" x="360" y="507" width="51" height="31"/>
+                                <rect key="frame" x="140" y="221" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.023529411760000001" green="0.65490196079999996" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="simSwipeUniMagIISwitchFlipped:" destination="Z8e-wJ-7s1" eventType="valueChanged" id="erO-Tj-xA5"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1xo-zk-uUk">
-                                <rect key="frame" x="0.0" y="820" width="300" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32549019610000002" green="0.34509803919999998" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="pOg-2M-c8k" kind="modal" modalTransitionStyle="crossDissolve" id="yyw-yR-Paa"/>
-                                </connections>
-                            </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="idtechLogo.png" id="177-2L-oed">
-                                <rect key="frame" x="340" y="359" width="89" height="22"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="logo.png" id="oWM-ii-vje">
-                                <rect key="frame" x="265" y="38" width="238" height="31"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hVU-2e-JvB">
-                                <rect key="frame" x="96" y="947" width="576" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Disclaimer: IDTech ShuttleTM is developed and owned by IDTECH, an unaffiliated third party; use of this solution requires your agreement to terms of use directly between yourself and IDTECH. IDTECH is a registered trademark of International Technologies &amp; Systems Corporation</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" red="0.18039215689999999" green="0.16078431369999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="graphBar.png" id="bzY-H0-oCn">
-                                <rect key="frame" x="0.0" y="100" width="768" height="10"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5AS-7W-VAl">
-                                <rect key="frame" x="689" y="954" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="infoBtn.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="TNY-DC-YjP" kind="modal" modalTransitionStyle="crossDissolve" id="8Sq-17-BcC"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="yAh-Nf-Ee1" appends="YES" id="jQq-Wp-YV5"/>
                             <outletCollection property="gestureRecognizers" destination="uGM-Iv-sWs" appends="YES" id="IHu-Cb-PRL"/>
                         </connections>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="imageCardState" destination="sEl-9b-Di8" id="60M-bG-fwB"/>
-                        <outlet property="simSwipeUdynamoButton" destination="7HA-3B-zlM" id="zFp-aD-UUZ"/>
                         <outlet property="simSwipeUniMagIIButton" destination="pff-iL-eiH" id="e6r-PN-RrU"/>
                         <outlet property="simSwipeUniMagIISwitch" destination="VRz-dM-sku" id="wGE-0m-FDa"/>
-                        <outlet property="simSwipeiDynamoButton" destination="f5I-jX-UxP" id="KKv-94-h0F"/>
-                        <outlet property="simSwipeiDynamoSwitch" destination="28Q-RN-YQP" id="PMn-Vm-dm0"/>
-                        <outlet property="simSwipeuDynamoSwitch" destination="ZEb-SG-u69" id="WME-hG-cIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYW-xD-apH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,7 +356,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="COJ-oy-ASY">
-                                <rect key="frame" x="-13" y="820" width="225" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="cancelButton.png">
@@ -1569,7 +1487,6 @@ When targeting an iPad display with HostedCheckout, there are certain display co
                                 </connections>
                             </button>
                             <imageView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="poweredbyLogo.png" id="iuO-fM-FPA">
-                                <rect key="frame" x="280" y="913" width="0.0" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <imageView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="poweredbyLogo.png" id="T8K-w9-ZSx">
@@ -2255,13 +2172,9 @@ When targeting an iPad display with HostedCheckout, there are certain display co
         <image name="button_step2.png" width="330" height="330"/>
         <image name="button_step3.png" width="330" height="330"/>
         <image name="cancelButton.png" width="600" height="250"/>
-        <image name="ccStaticState.png" width="969" height="163"/>
         <image name="diLogo.png" width="84" height="99"/>
         <image name="displayHCPage.png" width="1804" height="242"/>
         <image name="graphBar.png" width="768" height="10"/>
-        <image name="iDynamoIcon.png" width="601" height="385"/>
-        <image name="idtechLogo.png" width="241" height="61"/>
-        <image name="idynamo5ButtonDown.png" width="611" height="403"/>
         <image name="infoBtn.png" width="44" height="44"/>
         <image name="infoBtnDismiss.png" width="44" height="44"/>
         <image name="logo.png" width="344" height="45"/>
@@ -2272,8 +2185,6 @@ When targeting an iPad display with HostedCheckout, there are certain display co
         <image name="responsecode_2.png" width="801" height="289"/>
         <image name="responsecode_3.png" width="801" height="290"/>
         <image name="shuttleRequestScreenShot.png" width="1546" height="992"/>
-        <image name="uDynamoIcon.png" width="601" height="476"/>
-        <image name="uDynamoIconDown.png" width="610" height="492"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2281,13 +2192,13 @@ When targeting an iPad display with HostedCheckout, there are certain display co
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lxa-B8-c3y"/>
-        <segue reference="LTO-ox-EBH"/>
-        <segue reference="vy4-2M-iEn"/>
-        <segue reference="1aO-aJ-doV"/>
         <segue reference="d9j-ve-dhc"/>
-        <segue reference="59j-e9-rxz"/>
         <segue reference="Cpj-wK-0nI"/>
+        <segue reference="59j-e9-rxz"/>
+        <segue reference="1aO-aJ-doV"/>
+        <segue reference="0SZ-qp-4sT"/>
         <segue reference="Xwk-BG-7Mx"/>
+        <segue reference="LTO-ox-EBH"/>
+        <segue reference="lxa-B8-c3y"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,6 +30,8 @@
 		458BA7FC17F51BD100F4313C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458BA7FB17F51BD100F4313C /* CoreMedia.framework */; };
 		458BA7FE17F51BE300F4313C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458BA7FD17F51BE300F4313C /* CoreVideo.framework */; };
 		458BA80017F51C1000F4313C /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 458BA7FF17F51C1000F4313C /* libiconv.dylib */; };
+		B8FE0EC31A06041C00CF38DF /* NymiDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0EC21A06041C00CF38DF /* NymiDetectionViewController.m */; };
+		B8FE0EDA1A060A6400CF38DF /* DriversLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */; };
 		C203BF3217FA22AA0006EA70 /* uDynamoButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = C203BED817FA22AA0006EA70 /* uDynamoButtonDown.png */; };
 		C21BE5B117ECD4A700BA4E74 /* responsecode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B017ECD4A700BA4E74 /* responsecode_1.png */; };
 		C21BE5B317ECDA9000BA4E74 /* responsecode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B217ECDA9000BA4E74 /* responsecode_2.png */; };
@@ -118,6 +120,10 @@
 		458BA7FB17F51BD100F4313C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		458BA7FD17F51BE300F4313C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		458BA7FF17F51C1000F4313C /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		B8FE0EC11A06041C00CF38DF /* NymiDetectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NymiDetectionViewController.h; sourceTree = "<group>"; };
+		B8FE0EC21A06041C00CF38DF /* NymiDetectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NymiDetectionViewController.m; sourceTree = "<group>"; };
+		B8FE0ED71A0609AE00CF38DF /* DriversLicense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriversLicense.h; sourceTree = "<group>"; };
+		B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriversLicense.m; sourceTree = "<group>"; };
 		C203BE8617FA22AA0006EA70 /* 144x144-appButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "144x144-appButton.png"; sourceTree = "<group>"; };
 		C203BE8A17FA22AA0006EA70 /* button_step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step1.png; sourceTree = "<group>"; };
 		C203BE8B17FA22AA0006EA70 /* button_step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step2.png; sourceTree = "<group>"; };
@@ -291,6 +297,26 @@
 			path = "HC.POS/uniMag-SDK";
 			sourceTree = "<group>";
 		};
+		B8FE0EC01A06038900CF38DF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C28C4ACB17EA6682007F8375 /* SwipeViewController.h */,
+				C28C4ACC17EA6682007F8375 /* SwipeViewController.m */,
+				B8FE0EC11A06041C00CF38DF /* NymiDetectionViewController.h */,
+				B8FE0EC21A06041C00CF38DF /* NymiDetectionViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B8FE0ED61A06099900CF38DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B8FE0ED71A0609AE00CF38DF /* DriversLicense.h */,
+				B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C21BE5CC17F0DDAC00BA4E74 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,8 +475,6 @@
 				C241964717D7C48000453F74 /* HCWebView.m */,
 				C241964C17D8018400453F74 /* HCVerifyPaymentRequest.h */,
 				C241964D17D8018400453F74 /* HCVerifyPaymentRequest.m */,
-				C28C4ACB17EA6682007F8375 /* SwipeViewController.h */,
-				C28C4ACC17EA6682007F8375 /* SwipeViewController.m */,
 				C28C4AD017EB3D6A007F8375 /* SwipeInitResultsViewController.h */,
 				C28C4AD117EB3D6B007F8375 /* SwipeInitResultsViewController.m */,
 				C2ABB12017F33E4D00B1C3C5 /* SwipeVerifyViewController.h */,
@@ -475,6 +499,8 @@
 		C241955C17D7860000453F74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B8FE0ED61A06099900CF38DF /* Models */,
+				B8FE0EC01A06038900CF38DF /* Controllers */,
 				C21BE5CC17F0DDAC00BA4E74 /* images */,
 				C241955D17D7860000453F74 /* Shuttle.ObjC-Info.plist */,
 				C241955E17D7860000453F74 /* InfoPlist.strings */,
@@ -598,6 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8FE0EDA1A060A6400CF38DF /* DriversLicense.m in Sources */,
 				C241956217D7860000453F74 /* main.m in Sources */,
 				C241956617D7860000453F74 /* AppDelegate.m in Sources */,
 				C241958C17D7874500453F74 /* HCInitPay.m in Sources */,
@@ -612,6 +639,7 @@
 				C266F79E17DF939800913AC8 /* step3TutorialViewController.m in Sources */,
 				C28C4AAF17EA39C0007F8375 /* ReceiptViewController.m in Sources */,
 				C28C4AB817EA5894007F8375 /* DecisionViewController.m in Sources */,
+				B8FE0EC31A06041C00CF38DF /* NymiDetectionViewController.m in Sources */,
 				C28C4ACD17EA6682007F8375 /* SwipeViewController.m in Sources */,
 				C28C4AD217EB3D6B007F8375 /* SwipeInitResultsViewController.m in Sources */,
 				4575F2AB17F288F2009C9638 /* EncryptedSwipeData.m in Sources */,
@@ -707,6 +735,7 @@
 					"\"$(SRCROOT)/HC.POS/uniMag-SDK\"",
 					"\"$(SRCROOT)/HC.POS/ZBarSDK\"",
 					"\"$(SRCROOT)/HC.POS/infinite-SKD\"",
+					"$(PROJECT_DIR)/HC.POS",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Shuttle.ObjC;
@@ -726,6 +755,7 @@
 					"\"$(SRCROOT)/HC.POS/uniMag-SDK\"",
 					"\"$(SRCROOT)/HC.POS/ZBarSDK\"",
 					"\"$(SRCROOT)/HC.POS/infinite-SKD\"",
+					"$(PROJECT_DIR)/HC.POS",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Shuttle.ObjC;

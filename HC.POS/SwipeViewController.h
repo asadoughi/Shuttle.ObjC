@@ -11,13 +11,15 @@
 #import "EncryptedSwipeData.h"
 #import "MTSCRA.h"
 #import "uniMag.h"
+#import "DriversLicense.h"
 
 @interface SwipeViewController : UIViewController 
 
+//@property (nonatomic, strong) DriversLicense *new_license;
 @property (nonatomic, weak) IBOutlet UIImageView *ccSwipe;
 @property (strong, nonatomic) MTSCRA *magTek;
 @property (strong, nonatomic) uniMag *uniMag;
-;
+
 
 @property (strong, nonatomic) EncryptedSwipeData *encryptedSwipeData;
 

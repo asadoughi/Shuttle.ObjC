@@ -31,19 +31,19 @@
     // Enable info level NSLogs inside SDK
     // Here we turn on before initializing SDK object so the act of initializing is logged
     [uniMag enableLogging:true];
-    
+
     // Initialize the SDK by creating a uniMag class object
     self.uniMag = [[uniMag alloc] init];
-    
+
     // Set SDK to perform the connect task automatically when headset is attached
     [self.uniMag setAutoConnect:false];
-    
+
     // Set swipe timeout to infinite. By default, swipe task will timeout after 20 seconds
-	[self.uniMag setSwipeTimeoutDuration:0];
-    
+    [self.uniMag setSwipeTimeoutDuration:0];
+
     // Make SDK maximize the volume automatically during connection
     [self.uniMag setAutoAdjustVolume:true];
-    
+
     // By default, the diagnostic wave file logged by the SDK is stored under the temp directory
     // Here it is set to be under the Documents folder in the app sandbox so the log can be accessed
     // through iTunes file sharing. See UIFileSharingEnabled in iOS doc.
@@ -51,7 +51,8 @@
     
     self.simSwipeuDynamoSwitch.on = false;
     self.simSwipeiDynamoSwitch.on = false;
-    self.simSwipeUniMagIISwitch.on = false;
+    self.simSwipeUniMagIISwitch.on = true;
+    [self uniMag_activate];
     
 }
 
@@ -336,7 +337,11 @@
    // @try {
     
 	NSData *data = [notification object];
-    NSLog(@"[[ %@ ]]",[data description]);
+    NSLog(@"Data received from swipe: %@", [data description]);
+    DriversLicense *_new_license = [[DriversLicense alloc] initWithData:data];
+    
+    NSLog(@"\n\n\n=========\n\nDriver's License data is: %@\n\n==========", [_new_license description]);
+//    NSLog(@"[[ %@ ]]",[data description]);
     // char *ptr = (char *)[data bytes]; // Set a pointer to the beginning of the bytes
     
     // str = "02680083 1f3a1d00 83802554 58415553 54494e5e 5341444f 55474849 24414d49 525e3437 3031204d 4f4e5445 52455920 4f414b53 20424c56 44204150 54203132 33205e3f 3b363336 30313533 33383639 3638353d 31363131 31393839 31313237 3f543133 34313030 363336ea 9203"
@@ -453,7 +458,7 @@
 //    //}
 //    //@finally {
 //        [self.uniMag requestSwipe];
-//        [self determineNextStep];
+        [self determineNextStep];
 //    //}
     
 }
