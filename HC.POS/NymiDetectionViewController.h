@@ -10,7 +10,7 @@
 #include "NclWrapper.h"
 #import "NymiUserInfo.h"
 
-@interface NymiDetectionViewController : UIViewController <NclEventProtocol>
+@interface NymiDetectionViewController : UIViewController <NclEventProtocol, UIAlertViewDelegate>
 
 // conform to ncl event protocol implementation
 -(void) incomingNclEvent: (NclEvent* ) nclEvent;

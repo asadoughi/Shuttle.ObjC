@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "NymiUserInfo.h"
 #import "User.h"
+#import "ExistingUserViewController.h"
 
 @implementation SwipeViewController
 {
@@ -749,7 +750,7 @@
         NSLog(@"OMG WE MADE IT THIS FAR!");
         User *newUser = [[User alloc] initWithLicense:new_license andNymiInfo:nymiInfo];
         [newUser updateToUsersList];
-        // [self performSegueWithIdentifier:@"" sender:self];
+        [self performSegueWithIdentifier:@"segueToExistingUserView" sender:self];
     } else if (self.encryptedSwipeData != nil
         && self.encryptedSwipeData.track2Masked != nil
         && [self.encryptedSwipeData.track2Masked rangeOfString:@"segueSwipeResults="].location != NSNotFound)
@@ -767,6 +768,13 @@
     }
     else if (self.simSwipeUniMagIISwitch.on) {
         [self uniMag_activate];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"segueToExistingUserView"]) {
+        ExistingUserViewController *existingUserVC = (ExistingUserViewController *)[segue destinationViewController];
+//        [existingUserVC setNymiInfo:nymiInfo];
     }
 }
 

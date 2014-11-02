@@ -29,11 +29,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismiss) name:@"BACKTOINDEXNOTE" object:nil];
     
     self.view.backgroundColor = [UIColor orangeColor];
     [self insertProvisionButton];
     [self insertValidationButton];
     
+}
+
+-(void)dismiss
+{
+    //[self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)insertProvisionButton
@@ -48,14 +54,18 @@
 -(void)userPressedProvisionButton
 {
     if (!_nymiProvsioned) {
-        _myNcl = [[NclWrapper alloc] init];
+        NSLog(@"looks like _nymiProvsioned is not true");
+        if (!_myNcl) {
+            _myNcl = [[NclWrapper alloc] init];
+            [_myNcl setNclDelegate:self];
+        }
         
         // set the delegate to get things started and intialize NCL
-        [_myNcl setNclDelegate:self];
-        
+
         [_myNcl setEventTypeToWaitFor:NCL_EVENT_INIT];
         [_myNcl waitNclForEvent];
     } else {
+        NSLog(@"looks like _nymiProvsioned is true ");
         [_myNcl findNymi];
         [_myNcl setEventTypeToWaitFor:NCL_EVENT_FIND];
         [_myNcl waitNclForEvent];
@@ -78,10 +88,43 @@
         [_myNcl findNymi];
         [_myNcl setEventTypeToWaitFor:NCL_EVENT_FIND];
         [_myNcl waitNclForEvent];
+    } else {
+        NSLog(@"... meh.");
     }
 }
 
+-(void)displayValidationAlert
+{
+    NSLog(@"About to alert");
+//    self.view.backgroundColor = [UIColor yellowColor];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Provision Succeeded!" message:@"Please Validate" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//    [alert show];
 
+    UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:@"Nymi Provision Succeeded!"  message:nil  preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Validate Now" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self userPressedValidationButton];
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    // the user clicked OK
+    if (buttonIndex == 0)
+    {
+        NSLog(@"Time to validate yo...");
+        [self userPressedValidationButton];
+    } else {
+        //user clicked "Great!"
+        NSLog(@"I'm happy that you're awesome!");
+    }
+}
+
+- (void)willPresentAlertView:(UIAlertView *)alertView
+{
+    NSLog(@"???????");
+}
 
 // Method called when NCL events are received
 - (void) incomingNclEvent:(NclEvent *)nclEvent{
@@ -128,14 +171,12 @@
                 // it is used to find the same nymi on subsequent calls
                 //if (nymiProvsioned)
                 if (_nymiProvsioned) {
-                   NSLog(@"*** currentEvent.provision.nymiHandle: %d", currentEvent.provision.nymiHandle);
-                   NSLog(@"*** currentEvent.provision.provision.id: %u", (uint8_t)currentEvent.provision.provision.id);
-                   NSLog(@"*** currentEvent.provision.provision.key: %u", (uint8_t)currentEvent.provision.provision.key);
+                   NSLog(@"*** SUCCESS: currentEvent.provision.nymiHandle: %d", currentEvent.provision.nymiHandle);
                     
                     nui = [[NymiUserInfo alloc] initWithKey:provisionIdToStrings(currentEvent.provision.provision.key) andId:provisionIdToStrings(currentEvent.provision.provision.id) andHandle:currentEvent.provision.nymiHandle];
                     NSLog(@"HI AMIR: We have: %@", [nui description]);
-                    
                     // show alert here for validation instead
+                    [self displayValidationAlert];
                 }
                 
                 break;
@@ -160,6 +201,7 @@
                 // [self updateUiText:(@"Nymi validated, NEA can perform actions for validated user\n")];
                 [_myNcl disconnectNymi:(currentEvent.validation.nymiHandle)];
                 if (_nymiProvsioned) {
+                    _nymiProvsioned = NO;
                     dispatch_async(dispatch_get_main_queue(),
                                    ^{
                                        //[self.nymiButton setHidden:(NO)];
@@ -168,6 +210,7 @@
                                    });
                     NSLog(@"FINALLY MADE IT HERE> IS THIS THE LASTY STOP?");
                     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+                    _nymiProvsioned = NO;
                     
                     if ([delegate doesNotHaveNymiId:nui.nymiId]) {
                         [delegate setNymiId:nui.nymiId];

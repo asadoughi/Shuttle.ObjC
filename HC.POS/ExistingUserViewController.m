@@ -14,6 +14,34 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor purpleColor];
+//    [self insertReturnToHomeButton];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self insertReturnToHomeButton];
+}
+-(void)insertReturnToHomeButton
+{
+    UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [homeBtn setTitle:@"Done!" forState:UIControlStateNormal];
+    [homeBtn addTarget:self action:@selector(userPressedHomeButton) forControlEvents:UIControlEventTouchUpInside];
+    homeBtn.frame = CGRectMake(90, 190, 160, 60);
+    [self.view addSubview:homeBtn];
+}
+
+-(void)userPressedHomeButton
+{
+    NSLog(@"Time to go home...");
+//    NSNotification * notification = [NSNotification notificationWithName:@"BACKTOINDEXNOTE" object:nil];
+//    [[NSNotificationCenter defaultCenter] postNotification:notification];
+
+    
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    //[self performSegueWithIdentifier:@"segueToNymiDetectionHomeView" sender:self];
 }
 
 @end

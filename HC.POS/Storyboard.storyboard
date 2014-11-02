@@ -297,6 +297,7 @@
                     <connections>
                         <outlet property="simSwipeUniMagIIButton" destination="pff-iL-eiH" id="e6r-PN-RrU"/>
                         <outlet property="simSwipeUniMagIISwitch" destination="VRz-dM-sku" id="wGE-0m-FDa"/>
+                        <segue destination="LkI-uX-dra" kind="modal" identifier="segueToExistingUserView" id="Hpn-Cn-dWc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYW-xD-apH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,7 +308,7 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="yAh-Nf-Ee1"/>
             </objects>
-            <point key="canvasLocation" x="-3423" y="-4082"/>
+            <point key="canvasLocation" x="-3939" y="-4074"/>
         </scene>
         <!--Existing User View Controller-->
         <scene sceneID="5aB-YP-aWZ">
@@ -319,6 +320,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <segue destination="wuL-Gc-xii" kind="modal" identifier="segueToNymiDetectionHomeView" id="OWY-Bo-ESZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFc-SE-Oz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2212,11 +2216,12 @@ When targeting an iPad display with HostedCheckout, there are certain display co
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="d9j-ve-dhc"/>
+        <segue reference="Hpn-Cn-dWc"/>
+        <segue reference="t1l-cj-Ti6"/>
         <segue reference="Cpj-wK-0nI"/>
         <segue reference="59j-e9-rxz"/>
         <segue reference="1aO-aJ-doV"/>
         <segue reference="0SZ-qp-4sT"/>
-        <segue reference="t1l-cj-Ti6"/>
         <segue reference="LTO-ox-EBH"/>
         <segue reference="lxa-B8-c3y"/>
     </inferredMetricsTieBreakers>
