@@ -21,14 +21,29 @@
 {
     [super viewWillAppear:animated];
     [self insertReturnToHomeButton];
+    [self insertPaymentButton];
 }
 -(void)insertReturnToHomeButton
 {
     UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [homeBtn setTitle:@"Done!" forState:UIControlStateNormal];
+    [homeBtn setTitle:@"Done" forState:UIControlStateNormal];
     [homeBtn addTarget:self action:@selector(userPressedHomeButton) forControlEvents:UIControlEventTouchUpInside];
     homeBtn.frame = CGRectMake(5, 5, 160, 60);
     [self.view addSubview:homeBtn];
+}
+
+-(void)insertPaymentButton
+{
+    UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [homeBtn setTitle:@"Pay Now" forState:UIControlStateNormal];
+    [homeBtn addTarget:self action:@selector(payNow) forControlEvents:UIControlEventTouchUpInside];
+    homeBtn.frame = CGRectMake(8, 530, 160, 60);
+    [self.view addSubview:homeBtn];
+}
+
+-(void)payNow
+{
+    NSLog(@"PAY UP!");
 }
 
 -(void)userPressedHomeButton
