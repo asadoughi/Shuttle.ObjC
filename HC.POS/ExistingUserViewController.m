@@ -44,6 +44,7 @@
 -(void)payNow
 {
     NSLog(@"PAY UP!");
+    [self performSegueWithIdentifier:@"segueToCardSwiperForPayment" sender:self];
 }
 
 -(void)userPressedHomeButton

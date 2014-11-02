@@ -87,12 +87,44 @@
     
     UILabel *my_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 300, 40)];
     my_label.center = CGPointMake((screen.size.width/2)+50, (screen.size.height/2)+150);
-    my_label.text= @"Swipe ID Now";
+    my_label.text= @"Swipe Now";
     my_label.font = [UIFont boldSystemFontOfSize:30];
     my_label.backgroundColor = [UIColor clearColor];
     my_label.textColor = [UIColor whiteColor];
     [self.view addSubview:my_label];
     [self.view bringSubviewToFront:my_label];
+    
+    // button to hijack session if we don't have a reader
+    UIButton *goToProfileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [goToProfileButton setTitle:@"" forState:UIControlStateNormal];
+    [goToProfileButton addTarget:self action:@selector(goToProfileButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    goToProfileButton.frame = CGRectMake(0, 0, 200, 600);
+    //provisionBtn.center = CGPointMake(screen.size.width/2, screen.size.width/5);
+    [self.view addSubview:goToProfileButton];
+    
+    UIButton *submitPaymentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [submitPaymentButton setTitle:@"Process Payment" forState:UIControlStateNormal];
+    [submitPaymentButton addTarget:self action:@selector(processPaymentPressed) forControlEvents:UIControlEventTouchUpInside];
+    submitPaymentButton.frame = CGRectMake(screen.size.width-150, screen.size.height-50, 150, 50);
+    submitPaymentButton.titleLabel.textColor = [UIColor grayColor];
+    submitPaymentButton.alpha = 0.4;
+    //provisionBtn.center = CGPointMake(screen.size.width/2, screen.size.width/5);
+    [self.view addSubview:submitPaymentButton];
+}
+
+-(void)goToProfileButtonPressed
+{
+    NSLog(@"Trying to take short-cuts eh?");
+    [self performSegueWithIdentifier:@"segueToExistingUserView" sender:self];
+}
+
+-(void)processPaymentPressed
+{
+    UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:@"Payment Authorized!"  message:nil  preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
