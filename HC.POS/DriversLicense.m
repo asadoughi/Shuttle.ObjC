@@ -19,8 +19,9 @@
 
 -(BOOL)isInvalid
 {
-    return _dateOfBirth == nil || _dateOfBirth == 0;
+    return _dateOfBirth < 18000000 || _dateOfBirth > 24000000;
 }
+
 -(NSString *)description
 {
 //    return [NSString stringWithFormat:@"Driver's License: %@ %@, DOB is %@ %@, %@", _firstName, _lastName, _month, _day, _year ];

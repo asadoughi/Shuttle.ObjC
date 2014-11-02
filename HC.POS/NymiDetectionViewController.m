@@ -135,6 +135,7 @@
                     nui = [[NymiUserInfo alloc] initWithKey:provisionIdToStrings(currentEvent.provision.provision.key) andId:provisionIdToStrings(currentEvent.provision.provision.id) andHandle:currentEvent.provision.nymiHandle];
                     NSLog(@"HI AMIR: We have: %@", [nui description]);
                     
+                    // show alert here for validation instead
                 }
                 
                 break;

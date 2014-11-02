@@ -359,7 +359,10 @@
     new_license = [[DriversLicense alloc] initWithData:data];
     
     if ([new_license isInvalid]) {
+        [self uniMag_deactivate];
+        [self uniMag_activate];
         [self displaySwipeAgainMessage];
+        return;
     }
     
     // NSLog(@"\n\n\n=========\n\nDriver's License data is: %@\n\n==========", [_new_license description]);
