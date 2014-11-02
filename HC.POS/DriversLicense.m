@@ -24,8 +24,6 @@
 
 -(NSString *)description
 {
-//    return [NSString stringWithFormat:@"Driver's License: %@ %@, DOB is %@ %@, %@", _firstName, _lastName, _month, _day, _year ];
-
     return [NSString stringWithFormat:@"Driver's License: %@ %@, DOB is %d", _firstName, _lastName, _dateOfBirth];
 }
 

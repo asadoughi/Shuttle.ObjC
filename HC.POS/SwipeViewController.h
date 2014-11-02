@@ -13,6 +13,7 @@
 #import "uniMag.h"
 #import "DriversLicense.h"
 #import "NymiUserInfo.h"
+#import "PaymentProcessor.h"
 
 @interface SwipeViewController : UIViewController <UIAlertViewDelegate>
 

@@ -120,6 +120,29 @@
 
 -(void)processPaymentPressed
 {
+    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    [dictionary setObject:@"1001" forKey:@"InvoiceNo"];
+    [dictionary setObject:@"1001" forKey:@"RefNo"];
+    [dictionary setObject:@"GitHub REST.Obj" forKey:@"Memo"];
+    [dictionary setObject:@"1.00" forKey:@"Purchase"];
+    [dictionary setObject:@"02" forKey:@"LaneID"];
+    [dictionary setObject:@"OneTime" forKey:@"Frequency"];
+    [dictionary setObject:@"RecordNumberRequested" forKey:@"RecordNo"];
+    [dictionary setObject:@"MagneSafe" forKey:@"EncryptedFormat"];
+    [dictionary setObject:@"Swiped" forKey:@"AccountSource"];
+    [dictionary setObject:@"2F8248964608156B2B1745287B44CA90A349905F905514ABE3979D7957F13804705684B1C9D5641C" forKey:@"EncryptedBlock"];
+    [dictionary setObject:@"9500030000040C200026" forKey:@"EncryptedKey"];
+    
+    PaymentProcessor *paymentProcessor = [[PaymentProcessor alloc] init];
+    BOOL payment_succeeded = [paymentProcessor process:dictionary];
+    
+    NSString *msg;
+    if (payment_succeeded) {
+        msg = @"Payment Authorized!";
+    } else {
+        msg = @"Payment Not Accepted!";
+    }
+    
     UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:@"Payment Authorized!"  message:nil  preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self dismissViewControllerAnimated:YES completion:nil];

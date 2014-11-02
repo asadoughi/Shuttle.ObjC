@@ -44,6 +44,7 @@
 		B8FE0F371A069D4200CF38DF /* mcbkg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8FE0F361A069D4200CF38DF /* mcbkg1.jpg */; };
 		B8FE0F391A06A01100CF38DF /* mcbkg3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8FE0F381A06A01100CF38DF /* mcbkg3.jpg */; };
 		B8FE0F3B1A06A76900CF38DF /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = B8FE0F3A1A06A76900CF38DF /* checkmark.png */; };
+		B8FE0F3E1A06AFB600CF38DF /* PaymentProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FE0F3D1A06AFB600CF38DF /* PaymentProcessor.m */; };
 		C203BF3217FA22AA0006EA70 /* uDynamoButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = C203BED817FA22AA0006EA70 /* uDynamoButtonDown.png */; };
 		C21BE5B117ECD4A700BA4E74 /* responsecode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B017ECD4A700BA4E74 /* responsecode_1.png */; };
 		C21BE5B317ECDA9000BA4E74 /* responsecode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B217ECDA9000BA4E74 /* responsecode_2.png */; };
@@ -153,6 +154,8 @@
 		B8FE0F361A069D4200CF38DF /* mcbkg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mcbkg1.jpg; sourceTree = "<group>"; };
 		B8FE0F381A06A01100CF38DF /* mcbkg3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mcbkg3.jpg; sourceTree = "<group>"; };
 		B8FE0F3A1A06A76900CF38DF /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
+		B8FE0F3C1A06AFB600CF38DF /* PaymentProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentProcessor.h; sourceTree = "<group>"; };
+		B8FE0F3D1A06AFB600CF38DF /* PaymentProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentProcessor.m; sourceTree = "<group>"; };
 		C203BE8617FA22AA0006EA70 /* 144x144-appButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "144x144-appButton.png"; sourceTree = "<group>"; };
 		C203BE8A17FA22AA0006EA70 /* button_step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step1.png; sourceTree = "<group>"; };
 		C203BE8B17FA22AA0006EA70 /* button_step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step2.png; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				B8FE0ED81A0609AE00CF38DF /* DriversLicense.m */,
 				B8FE0EE91A06366A00CF38DF /* User.h */,
 				B8FE0EEA1A06366A00CF38DF /* User.m */,
+				B8FE0F3C1A06AFB600CF38DF /* PaymentProcessor.h */,
+				B8FE0F3D1A06AFB600CF38DF /* PaymentProcessor.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -697,6 +702,7 @@
 				B8FE0EEB1A06366A00CF38DF /* User.m in Sources */,
 				B8FE0EDA1A060A6400CF38DF /* DriversLicense.m in Sources */,
 				C241956217D7860000453F74 /* main.m in Sources */,
+				B8FE0F3E1A06AFB600CF38DF /* PaymentProcessor.m in Sources */,
 				C241956617D7860000453F74 /* AppDelegate.m in Sources */,
 				C241958C17D7874500453F74 /* HCInitPay.m in Sources */,
 				C241958F17D7877500453F74 /* HCInitResults.m in Sources */,

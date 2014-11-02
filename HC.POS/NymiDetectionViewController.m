@@ -89,6 +89,7 @@
     [provisionBtn setTitle:@"Provision Nymi" forState:UIControlStateNormal];
     [provisionBtn addTarget:self action:@selector(userPressedProvisionButton) forControlEvents:UIControlEventTouchUpInside];
     provisionBtn.frame = CGRectMake(0, 0, 160, 60);
+    provisionBtn.alpha = 0.3;
     provisionBtn.center = CGPointMake(screen.size.width/2, screen.size.width/5);
     [self.view addSubview:provisionBtn];
 }
