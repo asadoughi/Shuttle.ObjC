@@ -43,6 +43,7 @@
 		B8FE0F351A06776D00CF38DF /* Wit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FE0F331A06776D00CF38DF /* Wit.framework */; };
 		B8FE0F371A069D4200CF38DF /* mcbkg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8FE0F361A069D4200CF38DF /* mcbkg1.jpg */; };
 		B8FE0F391A06A01100CF38DF /* mcbkg3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8FE0F381A06A01100CF38DF /* mcbkg3.jpg */; };
+		B8FE0F3B1A06A76900CF38DF /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = B8FE0F3A1A06A76900CF38DF /* checkmark.png */; };
 		C203BF3217FA22AA0006EA70 /* uDynamoButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = C203BED817FA22AA0006EA70 /* uDynamoButtonDown.png */; };
 		C21BE5B117ECD4A700BA4E74 /* responsecode_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B017ECD4A700BA4E74 /* responsecode_1.png */; };
 		C21BE5B317ECDA9000BA4E74 /* responsecode_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C21BE5B217ECDA9000BA4E74 /* responsecode_2.png */; };
@@ -151,6 +152,7 @@
 		B8FE0F331A06776D00CF38DF /* Wit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Wit.framework; sourceTree = "<group>"; };
 		B8FE0F361A069D4200CF38DF /* mcbkg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mcbkg1.jpg; sourceTree = "<group>"; };
 		B8FE0F381A06A01100CF38DF /* mcbkg3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mcbkg3.jpg; sourceTree = "<group>"; };
+		B8FE0F3A1A06A76900CF38DF /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		C203BE8617FA22AA0006EA70 /* 144x144-appButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "144x144-appButton.png"; sourceTree = "<group>"; };
 		C203BE8A17FA22AA0006EA70 /* button_step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step1.png; sourceTree = "<group>"; };
 		C203BE8B17FA22AA0006EA70 /* button_step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_step2.png; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		C21BE5CC17F0DDAC00BA4E74 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B8FE0F3A1A06A76900CF38DF /* checkmark.png */,
 				B8FE0F381A06A01100CF38DF /* mcbkg3.jpg */,
 				B8FE0F361A069D4200CF38DF /* mcbkg1.jpg */,
 				33904DB5192BECB20050AF04 /* ccSwipeState.png */,
@@ -638,6 +641,7 @@
 				C241965A17D81B0E00453F74 /* logo.png in Resources */,
 				C2E58ABC17DCFC2B00FDCA31 /* logo-ltgray.png in Resources */,
 				C2842D6D17E8937A006EEAAA /* 144x144-appButton.png in Resources */,
+				B8FE0F3B1A06A76900CF38DF /* checkmark.png in Resources */,
 				33904DA8192BB5C10050AF04 /* button_step1.png in Resources */,
 				C28C4A8C17EA156B007F8375 /* poweredby.png in Resources */,
 				C28C4A8E17EA17F2007F8375 /* poweredbyLogo.png in Resources */,

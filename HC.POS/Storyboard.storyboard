@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="wuL-Gc-xii">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="LkI-uX-dra">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -317,6 +317,34 @@
                     <view key="view" contentMode="scaleToFill" id="fIM-xX-gmp">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matthew Chan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MPa-2A-8cu">
+                                <rect key="frame" x="56" y="569" width="881" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="67"/>
+                                <color key="textColor" red="0.97212357954545459" green="0.97212357954545459" blue="0.97212357954545459" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB: June 1, 1983" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ko6-im-lWV">
+                                <rect key="frame" x="59" y="670" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.99931060122868143" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" id="f0U-vE-YdP">
+                                <rect key="frame" x="516" y="593" width="78" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" id="DHC-ot-JM2">
+                                <rect key="frame" x="574" y="593" width="78" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" id="vfX-nr-Imv">
+                                <rect key="frame" x="635" y="598" width="78" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -2194,6 +2222,7 @@ When targeting an iPad display with HostedCheckout, there are certain display co
         <image name="button_step2.png" width="330" height="330"/>
         <image name="button_step3.png" width="330" height="330"/>
         <image name="cancelButton.png" width="600" height="250"/>
+        <image name="checkmark.png" width="364" height="318"/>
         <image name="diLogo.png" width="84" height="99"/>
         <image name="displayHCPage.png" width="1804" height="242"/>
         <image name="graphBar.png" width="768" height="10"/>
@@ -2216,7 +2245,7 @@ When targeting an iPad display with HostedCheckout, there are certain display co
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="d9j-ve-dhc"/>
-        <segue reference="Hpn-Cn-dWc"/>
+        <segue reference="oMz-kL-8kq"/>
         <segue reference="t1l-cj-Ti6"/>
         <segue reference="Cpj-wK-0nI"/>
         <segue reference="59j-e9-rxz"/>

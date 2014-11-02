@@ -27,7 +27,7 @@
     UIButton *homeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [homeBtn setTitle:@"Done!" forState:UIControlStateNormal];
     [homeBtn addTarget:self action:@selector(userPressedHomeButton) forControlEvents:UIControlEventTouchUpInside];
-    homeBtn.frame = CGRectMake(90, 190, 160, 60);
+    homeBtn.frame = CGRectMake(5, 5, 160, 60);
     [self.view addSubview:homeBtn];
 }
 
